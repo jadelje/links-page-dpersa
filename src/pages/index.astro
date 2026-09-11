@@ -1,0 +1,93 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/Header.astro';
+import Button from '../components/Button.astro';
+import SocialLinks from '../components/SocialLinks.astro';
+import CategoryCard from '../components/CategoryCard.astro';
+import { getUTMParams } from '../utils/utm';
+
+const utmParams = getUTMParams();
+---
+
+<BaseLayout
+  title="Dpersa - Belleza Premium"
+  description="Descubre Dpersa, la marca de belleza y cosmética premium para mujeres modernas. Envíos a todo el país."
+>
+  <Header />
+
+  <main class="max-w-2xl mx-auto px-5 py-8 pb-12">
+    <!-- Hero Section -->
+    <section class="text-center mb-9" role="region" aria-label="Presentación principal">
+      <h1 class="text-4xl md:text-5xl font-bold text-dpersa-plum mb-2 leading-tight">
+        Detalles
+      </h1>
+      <p class="text-lg text-dpersa-text font-medium">
+        que hablan por tí<span class="text-2xl">✨</span>
+      </p>
+    </section>
+
+    <!-- Categories Section -->
+    <section
+      class="flex justify-around gap-4 mb-9 px-2"
+      role="region"
+      aria-label="Categorías de servicio"
+    >
+      <CategoryCard icon="🏪" label="Showroom" ariaLabel="Visita nuestro showroom" />
+      <CategoryCard icon="🚚" label="Entregas" ariaLabel="Entregas a domicilio" />
+      <CategoryCard icon="💬" label="Consultas" ariaLabel="Resuelve tus consultas" />
+    </section>
+
+    <!-- CTAs Section -->
+    <section class="space-y-3 mb-7" role="region" aria-label="Acciones principales">
+      <Button
+        href="https://tienda.dpersa.com"
+        variant="secondary"
+        icon="🛍️"
+        ariaLabel="Explorar tienda online"
+      >
+        Explorar Tienda
+      </Button>
+
+      <Button
+        href="https://tienda.dpersa.com"
+        variant="tertiary"
+        icon="📍"
+        ariaLabel="Ver ubicación"
+      >
+        Ubicación
+      </Button>
+
+      <Button
+        href="https://wa.me/573102877604"
+        variant="primary"
+        icon="💬"
+        ariaLabel="Chatear por WhatsApp"
+      >
+        Chatear con nosotros
+      </Button>
+    </section>
+
+    <!-- Social Links -->
+    <section class="mb-6" role="region" aria-label="Redes sociales">
+      <SocialLinks />
+    </section>
+
+    <!-- Menu Link -->
+    <div class="text-center">
+      <a
+        href="https://tienda.dpersa.com"
+        class="text-xs font-semibold text-dpersa-plum hover:text-dpersa-champagne transition-colors"
+        aria-label="Ver catálogo completo"
+      >
+        Catálogo Completo de Dpersa
+      </a>
+    </div>
+
+    <!-- UTM Indicator -->
+    {utmParams.utm_source && (
+      <div class="text-center text-xs text-dpersa-champagne opacity-70 mt-4">
+        Origen: {utmParams.utm_source}
+      </div>
+    )}
+  </main>
+</BaseLayout>

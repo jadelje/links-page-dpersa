@@ -1,0 +1,14 @@
+---
+export interface Props {
+  icon: string;
+  label: string;
+  ariaLabel?: string;
+}
+
+const { icon, label, ariaLabel } = Astro.props;
+---
+
+<div class="category-item" role="article" aria-label={ariaLabel || label}>
+  <div class="category-icon">{icon}</div>
+  <p class="category-label">{label}</p>
+</div>

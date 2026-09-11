@@ -1,0 +1,36 @@
+---
+export interface Props {
+  href: string;
+  variant?: 'primary' | 'secondary' | 'tertiary';
+  icon?: string;
+  target?: string;
+  rel?: string;
+  ariaLabel?: string;
+}
+
+const {
+  href,
+  variant = 'primary',
+  icon,
+  target,
+  rel,
+  ariaLabel
+} = Astro.props;
+
+const variantClasses = {
+  primary: 'btn-primary',
+  secondary: 'btn-secondary',
+  tertiary: 'btn-tertiary',
+};
+---
+
+<a
+  href={href}
+  class={`${variantClasses[variant]} flex items-center justify-center gap-2 w-full text-base`}
+  {target}
+  {rel}
+  aria-label={ariaLabel}
+>
+  {icon && <span class="text-lg">{icon}</span>}
+  <slot />
+</a>

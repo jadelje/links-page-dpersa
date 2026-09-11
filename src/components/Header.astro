@@ -1,0 +1,31 @@
+---
+export interface Props {
+  storeUrl?: string;
+}
+
+const { storeUrl = "https://tienda.dpersa.com" } = Astro.props;
+---
+
+<header class="sticky top-0 z-50 bg-dpersa-cream border-b border-dpersa-lavender/30">
+  <div class="max-w-2xl mx-auto px-5 py-4 flex justify-between items-center gap-4">
+    <!-- Logo -->
+    <div class="w-14 h-14 bg-gradient-to-br from-dpersa-plum to-dpersa-lavender rounded-xl flex items-center justify-center flex-shrink-0">
+      <span class="text-2xl font-bold text-dpersa-cream" aria-label="Dpersa">D</span>
+    </div>
+
+    <!-- Status Badge -->
+    <div class="flex items-center gap-2 text-sm font-semibold text-dpersa-plum">
+      <span class="w-2 h-2 bg-green-500 rounded-full"></span>
+      <span>Abierto</span>
+    </div>
+
+    <!-- Order Button -->
+    <a
+      href={storeUrl}
+      class="btn-secondary text-sm px-4 py-2 flex-shrink-0"
+      aria-label="Pedir ahora"
+    >
+      Pedir
+    </a>
+  </div>
+</header>

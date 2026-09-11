@@ -1,0 +1,55 @@
+---
+export interface SocialLink {
+  label: string;
+  url: string;
+  icon: string;
+  iconPath?: string;
+}
+
+export interface Props {
+  links?: SocialLink[];
+}
+
+const defaultLinks: SocialLink[] = [
+  {
+    label: 'WhatsApp',
+    url: 'https://wa.me/573102877604',
+    icon: 'whatsapp',
+    iconPath: '/icons/whatsapp.svg',
+  },
+  {
+    label: 'Instagram',
+    url: 'https://www.instagram.com/dpersafloristeria.bga',
+    icon: 'instagram',
+    iconPath: '/icons/instagram.svg',
+  },
+  {
+    label: 'TikTok',
+    url: 'https://www.tiktok.com/search?q=dpersafloristeria.bga&t=1789089840333',
+    icon: 'tiktok',
+    iconPath: '/icons/tiktok.svg',
+  },
+];
+
+const { links = defaultLinks } = Astro.props;
+---
+
+<nav aria-label="Enlaces sociales" class="flex gap-4 justify-center">
+  {links.map((link) => (
+    <a
+      href={link.url}
+      title={link.label}
+      aria-label={link.label}
+      target="_blank"
+      rel="noopener noreferrer"
+      class="btn-icon text-dpersa-plum hover:bg-dpersa-lavender"
+    >
+      <img
+        src={link.iconPath}
+        alt={link.label}
+        class="w-5 h-5"
+        loading="lazy"
+      />
+    </a>
+  ))}
+</nav>
