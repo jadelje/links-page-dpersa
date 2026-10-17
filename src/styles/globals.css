@@ -18,15 +18,15 @@
 
 @layer components {
   .btn-primary {
-    @apply bg-gradient-to-br from-dpersa-plum to-dpersa-plum/80 text-dpersa-cream px-4 py-3 rounded-lg font-semibold transition-all duration-300 hover:shadow-lg active:scale-95;
+    @apply bg-dpersa-whatsapp text-white px-4 py-3 rounded-lg font-semibold transition-all duration-300 hover:shadow-lg active:scale-95;
   }
 
   .btn-secondary {
-    @apply bg-dpersa-lavender text-dpersa-plum px-4 py-3 rounded-lg font-semibold transition-all duration-300 hover:bg-opacity-90 active:scale-95;
+    @apply bg-dpersa-rose text-white px-4 py-3 rounded-lg font-semibold transition-all duration-300 hover:shadow-lg active:scale-95;
   }
 
   .btn-tertiary {
-    @apply bg-dpersa-champagne text-dpersa-cream px-4 py-3 rounded-lg font-semibold transition-all duration-300 hover:bg-opacity-90 active:scale-95;
+    @apply bg-dpersa-cream text-dpersa-plum border-2 border-dpersa-champagne px-4 py-3 rounded-lg font-semibold transition-all duration-300 hover:bg-dpersa-lavender active:scale-95;
   }
 
   .btn-icon {
@@ -34,7 +34,7 @@
   }
 
   .category-item {
-    @apply flex flex-col items-center gap-2 text-center;
+    @apply flex flex-col items-center gap-2 text-center bg-dpersa-lavender rounded-xl p-3;
   }
 
   .category-icon {

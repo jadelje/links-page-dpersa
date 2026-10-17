@@ -5,10 +5,12 @@ export default {
     extend: {
       colors: {
         dpersa: {
-          cream: '#F8F7F5',
-          lavender: '#DCCFE3',
-          plum: '#5E3B56',
-          champagne: '#BFA37A',
+          cream: '#FAF6F2',
+          lavender: '#F0D8D7',
+          plum: '#49342D',
+          champagne: '#C6A15B',
+          rose: '#B87579',
+          whatsapp: '#25D366',
           text: '#353233',
         },
       },
