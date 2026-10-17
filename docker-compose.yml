@@ -1,0 +1,8 @@
+services:
+  web:
+    image: dpersa-links:latest
+    build: .
+    container_name: dpersa-links
+    restart: unless-stopped
+    ports:
+      - "80:80"
