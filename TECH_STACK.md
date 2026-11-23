@@ -95,7 +95,7 @@
 
 #### Header.astro
 ```astro
-<Header storeUrl="https://tienda.dpersa.com" />
+<Header storeUrl="https://dpersa.com" />
 ```
 - Props: `storeUrl`
 - Contenido: Logo, Status Badge, Order Button
